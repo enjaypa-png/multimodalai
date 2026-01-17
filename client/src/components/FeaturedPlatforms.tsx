@@ -43,7 +43,7 @@ export default function FeaturedPlatforms() {
         {featuredTools.map((tool, index) => (
           <div 
             key={index}
-            className="group relative flex flex-col p-6 rounded-2xl bg-[#0A0A0B] border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300"
+            className="group relative flex flex-col p-6 rounded-2xl bg-[#0A0A0B] border border-white/[0.08] hover:border-white/[0.2] hover:bg-white/[0.02] hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm hover:shadow-xl hover:shadow-blue-900/10"
           >
             <div className="flex justify-between items-start mb-6">
               {/* Icon Placeholder */}
