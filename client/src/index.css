@@ -49,12 +49,12 @@
 
 /* Force Dark Mode Colors as Default since the design is Dark Mode only */
 :root {
-  /* Deep Space Background */
-  --background: oklch(0.05 0.01 260); /* Very dark blue/black */
+  /* Deep Space Background - Cleaner, darker */
+  --background: oklch(0.02 0.01 260); /* Almost pure black with hint of blue */
   --foreground: oklch(0.98 0 0); /* White */
 
-  /* Glassmorphic Card */
-  --card: oklch(0.1 0.02 260 / 0.4); /* Semi-transparent dark */
+  /* Glassmorphic Card - Less blur, more solid */
+  --card: oklch(0.08 0.02 260 / 0.6); 
   --card-foreground: oklch(0.98 0 0);
 
   --popover: oklch(0.05 0.01 260);
@@ -76,7 +76,7 @@
   --destructive: oklch(0.6 0.2 20);
   --destructive-foreground: oklch(0.98 0 0);
 
-  --border: oklch(1 0 0 / 0.1); /* 10% White border */
+  --border: oklch(1 0 0 / 0.08); /* Subtle border */
   --input: oklch(1 0 0 / 0.1);
   --ring: oklch(0.6 0.18 250);
 
@@ -92,9 +92,9 @@
 
 /* Ensure .dark class uses the same values if applied */
 .dark {
-  --background: oklch(0.05 0.01 260);
+  --background: oklch(0.02 0.01 260);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.1 0.02 260 / 0.4);
+  --card: oklch(0.08 0.02 260 / 0.6);
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.05 0.01 260);
   --popover-foreground: oklch(0.98 0 0);
@@ -108,7 +108,7 @@
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.6 0.2 20);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 0.1);
+  --border: oklch(1 0 0 / 0.08);
   --input: oklch(1 0 0 / 0.1);
   --ring: oklch(0.6 0.18 250);
   --sidebar: oklch(0.05 0.01 260);
@@ -125,8 +125,8 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    /* Add a subtle gradient background to match the "Deep Space" feel */
-    background-image: radial-gradient(circle at 50% 0%, oklch(0.15 0.05 260 / 0.4) 0%, transparent 60%);
+    /* Clean, subtle radial gradient - No noise */
+    background: radial-gradient(circle at 50% 0%, oklch(0.12 0.05 260) 0%, oklch(0.02 0.01 260) 60%);
     background-attachment: fixed;
   }
 }
@@ -160,12 +160,12 @@
     }
   }
   
-  /* Custom Glass Utility */
+  /* Refined Glass Utility - Less blur, more solid */
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/[0.03] border border-white/[0.08];
   }
   
   .glass-hover {
-    @apply hover:bg-white/10 transition-colors duration-300;
+    @apply hover:bg-white/[0.06] transition-colors duration-200;
   }
 }

@@ -1,69 +1,68 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Sparkles, FileText, Image as ImageIcon, Video, Code, Megaphone } from "lucide-react";
+import { Search, Sparkles, FileText, Image as ImageIcon, Video, Code, Megaphone, Box, FileType } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="relative w-full min-h-[80vh] flex flex-col items-center justify-center overflow-hidden pt-20 pb-10">
-      {/* Background Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] opacity-50" />
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] opacity-30" />
+    <div className="relative w-full min-h-[85vh] flex flex-col items-center justify-center overflow-hidden pt-24 pb-16">
+      {/* Background Effects - Simplified & Cleaner */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Subtle top glow only */}
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-900/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="container relative z-10 flex flex-col items-center text-center px-4">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8 backdrop-blur-sm">
-          <Sparkles className="w-3.5 h-3.5" />
+        {/* Badge - Darker, more subtle */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-gray-400 text-sm font-medium mb-10 backdrop-blur-sm">
+          <Sparkles className="w-3.5 h-3.5 text-blue-400" />
           <span>The Future of AI is Multimodal</span>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 max-w-4xl">
-          Discover the AI that can <br />
+        {/* Main Heading - Tighter tracking, sharper contrast */}
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter text-white mb-6 max-w-4xl leading-[1.1]">
+          Discover AI That Can <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-            See, Hear, and Speak
+            See, Hear, & Speak
           </span>
         </h1>
 
-        {/* Subheading */}
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed">
+        {/* Subheading - Cleaner text */}
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-14 leading-relaxed font-normal">
           The curated directory for multimodal artificial intelligence. Explore tools that blend text, image, video, and audio into seamless experiences.
         </p>
 
-        {/* Search Bar */}
-        <div className="w-full max-w-2xl relative mb-12 group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="relative flex items-center bg-white/5 border border-white/10 rounded-full p-2 backdrop-blur-xl shadow-2xl">
-            <Search className="w-5 h-5 text-gray-400 ml-4 mr-2" />
+        {/* Search Bar - Higher contrast, less translucent */}
+        <div className="w-full max-w-2xl relative mb-16">
+          <div className="relative flex items-center bg-[#0A0A0B] border border-white/[0.08] rounded-full p-1.5 shadow-2xl shadow-black/50">
+            <Search className="w-5 h-5 text-gray-500 ml-5 mr-3" />
             <Input 
               type="text" 
               placeholder="Search for 'text to video', 'voice cloning', or 'multimodal agents'..." 
-              className="flex-1 bg-transparent border-none text-white placeholder:text-gray-500 focus-visible:ring-0 focus-visible:ring-offset-0 h-10 text-base"
+              className="flex-1 bg-transparent border-none text-white placeholder:text-gray-600 focus-visible:ring-0 focus-visible:ring-offset-0 h-11 text-[15px]"
             />
-            <Button className="rounded-full px-8 bg-blue-600 hover:bg-blue-500 text-white font-medium h-10 transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+            <Button className="rounded-full px-8 bg-blue-600 hover:bg-blue-500 text-white font-medium h-11 transition-all duration-200 shadow-lg shadow-blue-900/20">
               Search
             </Button>
           </div>
         </div>
 
-        {/* Quick Filters */}
+        {/* Quick Filters - Flatter, distinct borders */}
         <div className="flex flex-wrap justify-center gap-3 max-w-4xl">
-          <QuickFilter icon={FileText} label="AI Writing & Content" />
-          <QuickFilter icon={ImageIcon} label="AI Image & Design" />
-          <QuickFilter icon={Video} label="AI Video & Audio" />
-          <QuickFilter icon={Code} label="AI Coding & Developer Tools" />
-          <QuickFilter icon={Megaphone} label="AI Marketing & SEO" />
+          <QuickFilter icon={FileText} label="Text + Image" color="text-pink-400" />
+          <QuickFilter icon={Video} label="Image + Video" color="text-purple-400" />
+          <QuickFilter icon={Megaphone} label="Audio + Vision" color="text-blue-400" />
+          <QuickFilter icon={Box} label="Multimodal Agents" color="text-emerald-400" />
+          <QuickFilter icon={FileType} label="Document AI" color="text-orange-400" />
         </div>
       </div>
     </div>
   );
 }
 
-function QuickFilter({ icon: Icon, label }: { icon: any, label: string }) {
+function QuickFilter({ icon: Icon, label, color }: { icon: any, label: string, color: string }) {
   return (
-    <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 backdrop-blur-sm">
-      <Icon className="w-3.5 h-3.5 opacity-70" />
+    <button className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#0A0A0B] border border-white/[0.08] text-gray-400 text-sm font-medium hover:border-white/[0.15] hover:text-gray-200 transition-all duration-200">
+      <Icon className={`w-4 h-4 ${color}`} />
       <span>{label}</span>
     </button>
   );
