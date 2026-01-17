@@ -61,7 +61,7 @@ export default function Hero() {
 
 function QuickFilter({ icon: Icon, label, color }: { icon: any, label: string, color: string }) {
   return (
-    <button className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#0A0A0B] border border-white/[0.08] text-gray-400 text-sm font-medium hover:border-white/[0.15] hover:text-gray-200 transition-all duration-200">
+    <button className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#0A0A0B] border border-white/[0.08] text-gray-400 text-sm font-medium hover:border-white/[0.2] hover:text-white hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm hover:shadow-md hover:shadow-blue-900/10">
       <Icon className={`w-4 h-4 ${color}`} />
       <span>{label}</span>
     </button>
