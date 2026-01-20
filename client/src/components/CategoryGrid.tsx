@@ -20,7 +20,8 @@ const categories = [
     count: "+2",
     color: "text-purple-400",
     bg: "bg-purple-400/10",
-    border: "border-purple-400/20"
+    border: "border-purple-400/20",
+    link: "/category/image-design"
   },
   {
     icon: Video,
@@ -99,42 +100,55 @@ export default function CategoryGrid() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {categories.map((category, index) => (
-          <div 
-            key={index}
-            className="group relative flex flex-col p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 hover:-translate-y-1"
-          >
-            {/* Icon Box */}
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${category.bg} ${category.border} border`}>
-              <category.icon className={`w-6 h-6 ${category.color}`} />
-            </div>
+        {categories.map((category, index) => {
+          const CardContent = (
+            <>
+              {/* Icon Box */}
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${category.bg} ${category.border} border`}>
+                <category.icon className={`w-6 h-6 ${category.color}`} />
+              </div>
 
-            {/* Content */}
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-              {category.title}
-            </h3>
-            <p className="text-sm text-gray-400 mb-6 line-clamp-2 flex-1">
-              {category.description}
-            </p>
+              {/* Content */}
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                {category.title}
+              </h3>
+              <p className="text-sm text-gray-400 mb-6 line-clamp-2 flex-1">
+                {category.description}
+              </p>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {category.tags.map((tag, i) => (
-                <span key={i} className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-medium text-gray-400 group-hover:border-white/10 transition-colors">
-                  {tag}
-                </span>
-              ))}
-              {category.count && (
-                <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-medium text-gray-500">
-                  {category.count}
-                </span>
-              )}
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {category.tags.map((tag, i) => (
+                  <span key={i} className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-medium text-gray-400 group-hover:border-white/10 transition-colors">
+                    {tag}
+                  </span>
+                ))}
+                {category.count && (
+                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-medium text-gray-500">
+                    {category.count}
+                  </span>
+                )}
+              </div>
+
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
+            </>
+          );
+
+          const cardClassName = "group relative flex flex-col p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 hover:-translate-y-1";
+
+          return category.link ? (
+            <Link key={index} href={category.link}>
+              <div className={`${cardClassName} cursor-pointer`}>
+                {CardContent}
+              </div>
+            </Link>
+          ) : (
+            <div key={index} className={cardClassName}>
+              {CardContent}
             </div>
-            
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
