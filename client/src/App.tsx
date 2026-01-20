@@ -10,6 +10,7 @@ import Leaderboard from "./pages/Leaderboard";
 import Insights from "./pages/Insights";
 import Submit from "./pages/Submit";
 import CategoryImageDesign from "./pages/CategoryImageDesign";
+import CategoryCodingTools from "./pages/CategoryCodingTools";
 
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path={"/insights"} component={Insights} />
       <Route path={"/submit"} component={Submit} />
       <Route path={"/category/image-design"} component={CategoryImageDesign} />
+      <Route path={"/category/coding-tools"} component={CategoryCodingTools} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

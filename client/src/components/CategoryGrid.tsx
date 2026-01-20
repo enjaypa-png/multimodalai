@@ -41,7 +41,8 @@ const categories = [
     count: "+2",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
-    border: "border-emerald-400/20"
+    border: "border-emerald-400/20",
+    link: "/category/coding-tools"
   },
   {
     icon: Megaphone,
