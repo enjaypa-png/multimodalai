@@ -10,7 +10,8 @@ const categories = [
     count: "+3",
     color: "text-pink-400",
     bg: "bg-pink-400/10",
-    border: "border-pink-400/20"
+    border: "border-pink-400/20",
+    link: "/category/writing-content"
   },
   {
     icon: ImageIcon,
@@ -31,7 +32,8 @@ const categories = [
     count: "+2",
     color: "text-blue-400",
     bg: "bg-blue-400/10",
-    border: "border-blue-400/20"
+    border: "border-blue-400/20",
+    link: "/category/video-audio"
   },
   {
     icon: Code,

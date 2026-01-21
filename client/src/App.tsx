@@ -11,6 +11,8 @@ import Insights from "./pages/Insights";
 import Submit from "./pages/Submit";
 import CategoryImageDesign from "./pages/CategoryImageDesign";
 import CategoryCodingTools from "./pages/CategoryCodingTools";
+import CategoryWritingContent from "./pages/CategoryWritingContent";
+import CategoryVideoAudio from "./pages/CategoryVideoAudio";
 
 
 function Router() {
@@ -23,6 +25,8 @@ function Router() {
       <Route path={"/submit"} component={Submit} />
       <Route path={"/category/image-design"} component={CategoryImageDesign} />
       <Route path={"/category/coding-tools"} component={CategoryCodingTools} />
+      <Route path={"/category/writing-content"} component={CategoryWritingContent} />
+      <Route path={"/category/video-audio"} component={CategoryVideoAudio} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
