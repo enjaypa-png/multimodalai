@@ -10,7 +10,8 @@ const categories = [
     count: "+3",
     color: "text-pink-400",
     bg: "bg-pink-400/10",
-    border: "border-pink-400/20"
+    border: "border-pink-400/20",
+    link: "/category/writing-content"
   },
   {
     icon: ImageIcon,
