@@ -1,40 +1,12 @@
-import { Star, ExternalLink } from "lucide-react";
-import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { Link } from "wouter";
+import { getMultimodalTools, toKebabCase, getSupportedModalities } from "../../../shared/multimodalTools";
 
-// TypeScript interfaces for type safety
-interface PricingPlan {
-  name: string;
-  monthlyPrice: string;
-  annualPrice?: string;
-  features: string[];
-}
+// Get top 4 multimodal tools for featured section
+const allTools = getMultimodalTools();
+const featuredTools = allTools.slice(0, 4); // GPT-4o, ChatGPT, Google Gemini, Claude
 
-interface KeyFeature {
-  name: string;
-  description: string;
-}
-
-interface FeaturedTool {
-  name: string;
-  description: string;
-  fullDescription: string;
-  rating: string;
-  tags: string[];
-  icon: string;
-  website: string;
-  keyFeatures: KeyFeature[];
-  useCases: string[];
-  pricing: PricingPlan[];
-}
-
-const featuredTools: FeaturedTool[] = [
+// For legacy compatibility, keeping old structure (not used anymore)
+const oldFeaturedTools = [
   {
     name: "Midjourney",
     description: "Hyper-realistic image generation from text prompts.",
@@ -305,8 +277,6 @@ const featuredTools: FeaturedTool[] = [
 ];
 
 export default function FeaturedPlatforms() {
-  const [selectedTool, setSelectedTool] = useState<FeaturedTool | null>(null);
-
   return (
     <section className="container py-16 border-t border-white/[0.05]">
       <div className="text-center mb-12">
@@ -316,147 +286,31 @@ export default function FeaturedPlatforms() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {featuredTools.map((tool, index) => (
-          <div
-            key={index}
-            onClick={() => setSelectedTool(tool)}
-            className="group relative flex flex-col p-6 rounded-2xl bg-[#0A0A0B] border border-white/[0.08] hover:border-white/[0.2] hover:bg-white/[0.02] hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm hover:shadow-xl hover:shadow-blue-900/10 cursor-pointer"
-          >
-            <div className="flex justify-between items-start mb-6">
-              {/* Icon Placeholder */}
-              <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center overflow-hidden">
-                 {/* In a real app, use actual images. For now, a placeholder div */}
-                 <div className="w-6 h-6 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full" />
+          <Link key={index} href={`/tool/${toKebabCase(tool.name)}`}>
+            <a className="group relative flex flex-col p-6 rounded-2xl bg-[#0A0A0B] border border-white/[0.08] hover:border-white/[0.2] hover:bg-white/[0.02] hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm hover:shadow-xl hover:shadow-blue-900/10 cursor-pointer">
+              <div className="flex justify-between items-start mb-6">
+                {/* Icon Placeholder */}
+                <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center overflow-hidden">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full" />
+                </div>
               </div>
 
-              {/* Rating Badge */}
-              <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/[0.05] border border-white/[0.05]">
-                <span className="text-xs font-medium text-white">{tool.rating}</span>
-                <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-              </div>
-            </div>
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                {tool.name}
+              </h3>
+              <p className="text-sm text-gray-400 mb-6 line-clamp-2 flex-1 leading-relaxed">
+                {tool.name} is a multimodal AI platform that supports {getSupportedModalities(tool)}.
+              </p>
 
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-              {tool.name}
-            </h3>
-            <p className="text-sm text-gray-400 mb-6 line-clamp-2 flex-1 leading-relaxed">
-              {tool.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {tool.tags.map((tag, i) => (
-                <span key={i} className="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.05] text-[11px] font-medium text-gray-500">
-                  {tag}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <span className="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.05] text-[11px] font-medium text-gray-500">
+                  {tool.primaryCategory}
                 </span>
-              ))}
-            </div>
-          </div>
+              </div>
+            </a>
+          </Link>
         ))}
       </div>
-
-      {/* Modal Dialog */}
-      <Dialog open={selectedTool !== null} onOpenChange={(open) => !open && setSelectedTool(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0A0A0B] border-white/[0.08] text-white">
-          {selectedTool && (
-            <>
-              <DialogHeader>
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-xl bg-white/[0.05] flex items-center justify-center overflow-hidden">
-                      <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full" />
-                    </div>
-                    <div>
-                      <DialogTitle className="text-2xl font-bold text-white mb-1">
-                        {selectedTool.name}
-                      </DialogTitle>
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-1">
-                          <span className="text-sm font-medium text-white">{selectedTool.rating}</span>
-                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedTool.tags.map((tag, i) => (
-                            <span key={i} className="px-2 py-0.5 rounded-md bg-white/[0.05] border border-white/[0.08] text-xs font-medium text-gray-400">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <DialogDescription className="text-gray-300 text-base leading-relaxed">
-                  {selectedTool.fullDescription}
-                </DialogDescription>
-              </DialogHeader>
-
-              <div className="space-y-8 mt-6">
-                {/* Key Features */}
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4">Key Features</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {selectedTool.keyFeatures.map((feature, index) => (
-                      <div key={index} className="p-4 rounded-lg bg-white/[0.02] border border-white/[0.05]">
-                        <h4 className="font-semibold text-white mb-1 text-sm">{feature.name}</h4>
-                        <p className="text-gray-400 text-xs leading-relaxed">{feature.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Use Cases */}
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4">Use Cases</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {selectedTool.useCases.map((useCase, index) => (
-                      <div key={index} className="px-4 py-2 rounded-lg bg-white/[0.02] border border-white/[0.05] text-sm text-gray-300 text-center">
-                        {useCase}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Pricing */}
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4">Pricing</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {selectedTool.pricing.map((plan, index) => (
-                      <div key={index} className="p-5 rounded-lg bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15] transition-colors">
-                        <h4 className="font-bold text-white mb-2">{plan.name}</h4>
-                        <div className="mb-4">
-                          <div className="text-2xl font-bold text-blue-400">{plan.monthlyPrice}</div>
-                          {plan.annualPrice && (
-                            <div className="text-xs text-gray-500 mt-1">{plan.annualPrice}</div>
-                          )}
-                        </div>
-                        <ul className="space-y-2">
-                          {plan.features.map((feature, i) => (
-                            <li key={i} className="text-xs text-gray-400 leading-relaxed">
-                              • {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Visit Website Button */}
-                <div className="pt-4 border-t border-white/[0.05]">
-                  <a
-                    href={selectedTool.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
-                  >
-                    Visit Website
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
