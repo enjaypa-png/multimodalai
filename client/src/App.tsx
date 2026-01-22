@@ -13,6 +13,7 @@ import CategoryImageDesign from "./pages/CategoryImageDesign";
 import CategoryCodingTools from "./pages/CategoryCodingTools";
 import CategoryWritingContent from "./pages/CategoryWritingContent";
 import CategoryVideoAudio from "./pages/CategoryVideoAudio";
+import ToolDetail from "./pages/ToolDetail";
 
 
 function Router() {
@@ -27,6 +28,7 @@ function Router() {
       <Route path={"/category/coding-tools"} component={CategoryCodingTools} />
       <Route path={"/category/writing-content"} component={CategoryWritingContent} />
       <Route path={"/category/video-audio"} component={CategoryVideoAudio} />
+      <Route path={"/tool/:slug"} component={ToolDetail} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
