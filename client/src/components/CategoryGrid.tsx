@@ -84,7 +84,8 @@ const categories = [
     count: "+2",
     color: "text-indigo-400",
     bg: "bg-indigo-400/10",
-    border: "border-indigo-400/20"
+    border: "border-indigo-400/20",
+    link: "/category/automation-agents"
   }
 ];
 

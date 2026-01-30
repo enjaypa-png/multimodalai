@@ -1,9 +1,11 @@
 import { Link } from "wouter";
 import { getMultimodalTools, toKebabCase, getSupportedModalities } from "../../../shared/multimodalTools";
 
-// Get top 4 multimodal tools for featured section
+// Get top multimodal tools for featured section, with Manus AI as the first featured tool
 const allTools = getMultimodalTools();
-const featuredTools = allTools.slice(0, 4); // GPT-4o, ChatGPT, Google Gemini, Claude
+const manusAI = allTools.find(tool => tool.name === "Manus AI");
+const otherTools = allTools.filter(tool => tool.name !== "Manus AI").slice(0, 3); // GPT-4o, ChatGPT, Google Gemini
+const featuredTools = manusAI ? [manusAI, ...otherTools] : allTools.slice(0, 4);
 
 // For legacy compatibility, keeping old structure (not used anymore)
 const oldFeaturedTools = [

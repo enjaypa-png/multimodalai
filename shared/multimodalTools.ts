@@ -161,6 +161,150 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     reasoning: "Limited",
     website: "https://www.cursor.sh",
     logo: "https://www.cursor.sh/favicon.ico"
+  },
+  {
+    name: "Manus AI",
+    primaryCategory: "AI Automation & Agents",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "Yes",
+    reasoning: "Yes",
+    website: "https://manus.im",
+    logo: "https://manus.im/favicon.ico"
+  },
+  {
+    name: "Perplexity AI",
+    primaryCategory: "AI Research & Search",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "Limited",
+    reasoning: "Yes",
+    website: "https://www.perplexity.ai",
+    logo: "https://www.perplexity.ai/favicon.ico"
+  },
+  {
+    name: "Midjourney",
+    primaryCategory: "AI Image & Design",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "No",
+    website: "https://www.midjourney.com",
+    logo: "https://www.midjourney.com/favicon.ico"
+  },
+  {
+    name: "NotebookLM",
+    primaryCategory: "AI Research & Writing",
+    text: "Yes",
+    image: "No",
+    video: "No",
+    audio: "Yes",
+    code: "No",
+    reasoning: "Yes",
+    website: "https://notebooklm.google",
+    logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
+  },
+  {
+    name: "Canva AI",
+    primaryCategory: "AI Image & Design",
+    text: "Yes",
+    image: "Yes",
+    video: "Yes",
+    audio: "No",
+    code: "No",
+    reasoning: "No",
+    website: "https://www.canva.com",
+    logo: "https://www.canva.com/favicon.ico"
+  },
+  {
+    name: "Descript",
+    primaryCategory: "AI Video & Audio Editing",
+    text: "Yes",
+    image: "No",
+    video: "Yes",
+    audio: "Yes",
+    code: "No",
+    reasoning: "No",
+    website: "https://www.descript.com",
+    logo: "https://www.descript.com/favicon.ico"
+  },
+  {
+    name: "ElevenLabs",
+    primaryCategory: "AI Voice & Audio",
+    text: "Yes",
+    image: "No",
+    video: "No",
+    audio: "Yes",
+    code: "No",
+    reasoning: "No",
+    website: "https://elevenlabs.io",
+    logo: "https://elevenlabs.io/favicon.ico"
+  },
+  {
+    name: "Stable Diffusion",
+    primaryCategory: "AI Image & Design",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "No",
+    website: "https://stability.ai",
+    logo: "https://stability.ai/favicon.ico"
+  },
+  {
+    name: "DALL-E 3",
+    primaryCategory: "AI Image & Design",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "No",
+    website: "https://openai.com/dall-e-3",
+    logo: "https://cdn.oaistatic.com/_next/static/media/apple-touch-icon.59f2e898.png"
+  },
+  {
+    name: "Kling AI",
+    primaryCategory: "AI Video Generation",
+    text: "Yes",
+    image: "Yes",
+    video: "Yes",
+    audio: "No",
+    code: "No",
+    reasoning: "No",
+    website: "https://klingai.com",
+    logo: "https://klingai.com/favicon.ico"
+  },
+  {
+    name: "D-ID",
+    primaryCategory: "AI Avatar Video",
+    text: "Yes",
+    image: "Yes",
+    video: "Yes",
+    audio: "Yes",
+    code: "No",
+    reasoning: "No",
+    website: "https://www.d-id.com",
+    logo: "https://www.d-id.com/favicon.ico"
+  },
+  {
+    name: "Jasper AI",
+    primaryCategory: "AI Writing & Content",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "Limited",
+    website: "https://www.jasper.ai",
+    logo: "https://www.jasper.ai/favicon.ico"
   }
 ];
 
@@ -261,8 +405,11 @@ export function getCategoryRoute(primaryCategory: string): string | null {
   if (category.includes("code") || category.includes("developer") || category.includes("app builder") || category.includes("editor")) {
     return "/category/coding-tools";
   }
-  if (category.includes("writing") || category.includes("content")) {
+  if (category.includes("writing") || category.includes("content") || category.includes("research")) {
     return "/category/writing-content";
+  }
+  if (category.includes("automation") || category.includes("agent")) {
+    return "/category/automation-agents";
   }
 
   return null;
@@ -320,6 +467,19 @@ export function isWritingContentEligible(tool: MultimodalTool): boolean {
 }
 
 /**
+ * AI Automation & Agents → must support reasoning + at least one other modality
+ */
+export function isAutomationAgentsEligible(tool: MultimodalTool): boolean {
+  if (!isMultimodal(tool)) return false;
+
+  const hasReasoning = tool.reasoning === "Yes" || tool.reasoning === "Limited";
+  const hasText = tool.text === "Yes" || tool.text === "Limited";
+  const hasCode = tool.code === "Yes" || tool.code === "Limited";
+
+  return hasReasoning && (hasText || hasCode);
+}
+
+/**
  * Gets tools for a specific category page with category-specific filtering
  */
 export function getToolsForCategory(categorySlug: string): MultimodalTool[] {
@@ -334,6 +494,8 @@ export function getToolsForCategory(categorySlug: string): MultimodalTool[] {
       return allTools.filter(isCodingToolsEligible);
     case "writing-content":
       return allTools.filter(isWritingContentEligible);
+    case "automation-agents":
+      return allTools.filter(isAutomationAgentsEligible);
     default:
       return allTools;
   }
