@@ -23,6 +23,7 @@ export interface MultimodalTool {
   code: ModalitySupport;
   reasoning: ModalitySupport;
   website: string;
+  logo?: string;
 }
 
 /**
@@ -38,7 +39,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "Yes",
     code: "Yes",
     reasoning: "Yes",
-    website: "https://openai.com/index/gpt-4o"
+    website: "https://openai.com/index/gpt-4o",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
   },
   {
     name: "ChatGPT",
@@ -49,7 +51,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "Yes",
     code: "Yes",
     reasoning: "Yes",
-    website: "https://chat.openai.com"
+    website: "https://chat.openai.com",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
   },
   {
     name: "Google Gemini",
@@ -60,7 +63,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "Limited",
     code: "Yes",
     reasoning: "Yes",
-    website: "https://deepmind.google/technologies/gemini/"
+    website: "https://deepmind.google/technologies/gemini/",
+    logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
   },
   {
     name: "Claude",
@@ -71,7 +75,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "No",
     code: "Yes",
     reasoning: "Limited",
-    website: "https://www.anthropic.com/claude"
+    website: "https://www.anthropic.com/claude",
+    logo: "https://www.anthropic.com/_next/image?url=%2Fimages%2Ficons%2Fclaude-app-icon.png&w=96&q=75"
   },
   {
     name: "Runway",
@@ -82,7 +87,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "Limited",
     code: "No",
     reasoning: "No",
-    website: "https://runwayml.com"
+    website: "https://runwayml.com",
+    logo: "https://cdn.runwayml.com/assets/favicon.png"
   },
   {
     name: "Luma Dream Machine",
@@ -93,7 +99,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "No",
     code: "No",
     reasoning: "No",
-    website: "https://lumalabs.ai"
+    website: "https://lumalabs.ai",
+    logo: "https://lumalabs.ai/favicon.ico"
   },
   {
     name: "Pika",
@@ -104,7 +111,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "No",
     code: "No",
     reasoning: "No",
-    website: "https://pika.art"
+    website: "https://pika.art",
+    logo: "https://pika.art/favicon.ico"
   },
   {
     name: "Synthesia",
@@ -115,7 +123,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "Yes",
     code: "No",
     reasoning: "No",
-    website: "https://www.synthesia.io"
+    website: "https://www.synthesia.io",
+    logo: "https://www.synthesia.io/favicon.ico"
   },
   {
     name: "HeyGen",
@@ -126,7 +135,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "Yes",
     code: "No",
     reasoning: "No",
-    website: "https://www.heygen.com"
+    website: "https://www.heygen.com",
+    logo: "https://www.heygen.com/favicon.ico"
   },
   {
     name: "Replit",
@@ -137,7 +147,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "No",
     code: "Yes",
     reasoning: "Limited",
-    website: "https://replit.com"
+    website: "https://replit.com",
+    logo: "https://replit.com/public/images/logo-small.png"
   },
   {
     name: "Cursor",
@@ -148,7 +159,8 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     audio: "No",
     code: "Yes",
     reasoning: "Limited",
-    website: "https://www.cursor.sh"
+    website: "https://www.cursor.sh",
+    logo: "https://www.cursor.sh/favicon.ico"
   }
 ];
 

@@ -289,9 +289,22 @@ export default function FeaturedPlatforms() {
           <Link key={index} href={`/tool/${toKebabCase(tool.name)}`}>
             <a className="group relative flex flex-col p-6 rounded-2xl bg-[#0A0A0B] border border-white/[0.08] hover:border-white/[0.2] hover:bg-white/[0.02] hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm hover:shadow-xl hover:shadow-blue-900/10 cursor-pointer">
               <div className="flex justify-between items-start mb-6">
-                {/* Icon Placeholder */}
-                <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center overflow-hidden">
-                  <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full" />
+                {/* Logo */}
+                <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center overflow-hidden p-2">
+                  {tool.logo ? (
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        // Fallback to gradient if logo fails to load
+                        e.currentTarget.style.display = 'none';
+                        const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'block';
+                      }}
+                    />
+                  ) : null}
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full" style={{ display: tool.logo ? 'none' : 'block' }} />
                 </div>
               </div>
 

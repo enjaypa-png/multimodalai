@@ -91,10 +91,22 @@ export default function CategoryWritingContent() {
             {filteredTools.map((tool, index) => (
               <Link key={index} href={`/tool/${toKebabCase(tool.name)}`}>
                 <a className="group relative flex flex-col p-6 rounded-2xl bg-[#0A0A0B] border border-white/[0.08] hover:border-white/[0.2] hover:bg-white/[0.02] hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm hover:shadow-xl hover:shadow-purple-900/10 cursor-pointer">
-                  {/* Icon */}
+                  {/* Logo */}
                   <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
-                      <span className="text-xl font-bold text-purple-400">{tool.name[0]}</span>
+                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center overflow-hidden p-2">
+                      {tool.logo ? (
+                        <img 
+                          src={tool.logo} 
+                          alt={`${tool.name} logo`}
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'block';
+                          }}
+                        />
+                      ) : null}
+                      <span className="text-xl font-bold text-purple-400" style={{ display: tool.logo ? 'none' : 'block' }}>{tool.name[0]}</span>
                     </div>
                   </div>
 
