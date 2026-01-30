@@ -96,10 +96,7 @@ export default function CategoryGrid() {
           <div className="w-1 h-8 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
           <h2 className="text-2xl md:text-3xl font-bold text-white">Browse by Category</h2>
         </div>
-        <Link href="/categories" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors group">
-          View all categories
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </Link>
+        {/* View all categories link removed - no /categories page exists */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
