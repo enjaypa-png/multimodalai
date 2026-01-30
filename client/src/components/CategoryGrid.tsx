@@ -69,12 +69,13 @@ const categories = [
   {
     icon: BarChart,
     title: "AI Data, Analytics & Research",
-    description: "Data analysis, visualization, research assistants, and predictive analytics.",
-    tags: ["Data Analysis", "Visualization"],
-    count: "",
+    description: "Data analysis, visualization, research assistants, sports analytics, and predictive analytics.",
+    tags: ["Data Analysis", "Sports Analytics", "Predictions"],
+    count: "+4",
     color: "text-green-400",
     bg: "bg-green-400/10",
-    border: "border-green-400/20"
+    border: "border-green-400/20",
+    link: "/category/data-analytics"
   },
   {
     icon: Bot,

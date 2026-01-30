@@ -305,6 +305,54 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     reasoning: "Limited",
     website: "https://www.jasper.ai",
     logo: "https://www.jasper.ai/favicon.ico"
+  },
+  {
+    name: "SportsAI",
+    primaryCategory: "AI Sports Betting & Analytics",
+    text: "Yes",
+    image: "No",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "Yes",
+    website: "https://www.sports-ai.dev",
+    logo: "https://www.sports-ai.dev/favicon.ico"
+  },
+  {
+    name: "GeniusIQ",
+    primaryCategory: "AI Sports Data & Analytics",
+    text: "Yes",
+    image: "No",
+    video: "Yes",
+    audio: "No",
+    code: "No",
+    reasoning: "Yes",
+    website: "https://www.geniussports.com/geniusiq",
+    logo: "https://www.geniussports.com/favicon.ico"
+  },
+  {
+    name: "ProFitX",
+    primaryCategory: "AI Sports Analytics",
+    text: "Yes",
+    image: "No",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "Yes",
+    website: "https://profitx.ai",
+    logo: "https://profitx.ai/favicon.ico"
+  },
+  {
+    name: "Leans AI",
+    primaryCategory: "AI Sports Picks",
+    text: "Yes",
+    image: "No",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "Yes",
+    website: "https://leans.ai",
+    logo: "https://leans.ai/favicon.ico"
   }
 ];
 
@@ -405,11 +453,14 @@ export function getCategoryRoute(primaryCategory: string): string | null {
   if (category.includes("code") || category.includes("developer") || category.includes("app builder") || category.includes("editor")) {
     return "/category/coding-tools";
   }
-  if (category.includes("writing") || category.includes("content") || category.includes("research")) {
+  if (category.includes("writing") || category.includes("content")) {
     return "/category/writing-content";
   }
   if (category.includes("automation") || category.includes("agent")) {
     return "/category/automation-agents";
+  }
+  if (category.includes("data") || category.includes("analytics") || category.includes("research") || category.includes("sports") || category.includes("betting") || category.includes("picks")) {
+    return "/category/data-analytics";
   }
 
   return null;
@@ -480,6 +531,18 @@ export function isAutomationAgentsEligible(tool: MultimodalTool): boolean {
 }
 
 /**
+ * AI Data, Analytics & Research → must support reasoning + text
+ */
+export function isDataAnalyticsEligible(tool: MultimodalTool): boolean {
+  if (!isMultimodal(tool)) return false;
+
+  const hasReasoning = tool.reasoning === "Yes" || tool.reasoning === "Limited";
+  const hasText = tool.text === "Yes" || tool.text === "Limited";
+
+  return hasReasoning && hasText;
+}
+
+/**
  * Gets tools for a specific category page with category-specific filtering
  */
 export function getToolsForCategory(categorySlug: string): MultimodalTool[] {
@@ -496,6 +559,8 @@ export function getToolsForCategory(categorySlug: string): MultimodalTool[] {
       return allTools.filter(isWritingContentEligible);
     case "automation-agents":
       return allTools.filter(isAutomationAgentsEligible);
+    case "data-analytics":
+      return allTools.filter(isDataAnalyticsEligible);
     default:
       return allTools;
   }
