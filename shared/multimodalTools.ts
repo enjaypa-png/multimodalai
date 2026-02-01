@@ -24,6 +24,12 @@ export interface MultimodalTool {
   reasoning: ModalitySupport;
   website: string;
   logo?: string;
+  description?: string;
+  pricing?: "Free" | "Freemium" | "Paid" | "Free Trial";
+  votes?: number;
+  isNew?: boolean;
+  isTrending?: boolean;
+  addedDate?: string;
 }
 
 /**
@@ -40,7 +46,11 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Yes",
     website: "https://openai.com/index/gpt-4o",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+    description: "Omnimodel capable of reasoning across audio, vision, and text.",
+    pricing: "Freemium",
+    votes: 2847,
+    isTrending: true
   },
   {
     name: "ChatGPT",
@@ -52,7 +62,11 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Yes",
     website: "https://chat.openai.com",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+    description: "Advanced AI chatbot with multimodal capabilities.",
+    pricing: "Freemium",
+    votes: 3421,
+    isTrending: true
   },
   {
     name: "Google Gemini",
@@ -64,7 +78,11 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Yes",
     website: "https://deepmind.google/technologies/gemini/",
-    logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
+    logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg",
+    description: "Google's most capable multimodal AI model.",
+    pricing: "Freemium",
+    votes: 2156,
+    isTrending: true
   },
   {
     name: "Claude",
@@ -172,7 +190,11 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Yes",
     website: "https://manus.im",
-    logo: "https://manus.im/favicon.ico"
+    logo: "https://manus.im/favicon.ico",
+    description: "Multimodal AI platform for automation and agents.",
+    pricing: "Freemium",
+    votes: 1834,
+    isNew: true
   },
   {
     name: "Perplexity AI",
