@@ -106,7 +106,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://runwayml.com",
-    logo: "https://runwayml.com/favicon.ico"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/runway.svg"
   },
   {
     name: "Luma Dream Machine",
@@ -118,7 +118,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://lumalabs.ai",
-    logo: "https://lumalabs.ai/favicon.ico"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/luma.svg"
   },
   {
     name: "Pika",
@@ -142,7 +142,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.synthesia.io",
-    logo: "https://www.synthesia.io/favicon.ico"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/synthesia.svg"
   },
   {
     name: "HeyGen",
@@ -206,7 +206,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Limited",
     reasoning: "Yes",
     website: "https://www.perplexity.ai",
-    logo: "https://www.perplexity.ai/favicon.svg"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/perplexity.svg"
   },
   {
     name: "Midjourney",
@@ -218,7 +218,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.midjourney.com",
-    logo: "https://www.midjourney.com/apple-touch-icon.png"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/midjourney.svg"
   },
   {
     name: "NotebookLM",
@@ -254,7 +254,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.descript.com",
-    logo: "https://www.descript.com/favicon.ico"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/descript.svg"
   },
   {
     name: "ElevenLabs",
@@ -314,7 +314,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.d-id.com",
-    logo: "https://www.d-id.com/favicon.ico"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/d-id.svg"
   },
   {
     name: "Jasper AI",
@@ -326,7 +326,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Limited",
     website: "https://www.jasper.ai",
-    logo: "https://www.jasper.ai/hubfs/jasper-favicon-2023.png"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/jasper.svg"
   },
   {
     name: "SportsAI",
@@ -338,7 +338,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Yes",
     website: "https://www.sports-ai.dev",
-    logo: "https://www.sports-ai.dev/favicon.ico"
+    logo: "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/sportsai.svg"
   },
   {
     name: "GeniusIQ",
