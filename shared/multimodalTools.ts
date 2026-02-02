@@ -65,8 +65,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
     description: "Advanced AI chatbot with multimodal capabilities.",
     pricing: "Freemium",
-    votes: 3421,
-    isTrending: true
+    votes: 3421
   },
   {
     name: "Google Gemini",
@@ -375,6 +374,42 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     reasoning: "Yes",
     website: "https://leans.ai",
     logo: "https://leans.ai/favicon.ico"
+  },
+  {
+    name: "Grok Imagine v.10",
+    primaryCategory: "AI Image & Design",
+    text: "Yes",
+    image: "Yes",
+    video: "No",
+    audio: "No",
+    code: "No",
+    reasoning: "Yes",
+    website: "https://x.ai",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/ndKsKOWJuQnDbNCf.PNG",
+    description: "Advanced AI image generation with reasoning capabilities.",
+    pricing: "Freemium",
+    votes: 1247,
+    isNew: true,
+    isTrending: true,
+    addedDate: "2026-02-02"
+  },
+  {
+    name: "CodeRabbit v1.7",
+    primaryCategory: "AI Code Review",
+    text: "Yes",
+    image: "No",
+    video: "No",
+    audio: "No",
+    code: "Yes",
+    reasoning: "Yes",
+    website: "https://coderabbit.ai",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/XKUXKlQeyKehkDAI.PNG",
+    description: "AI-powered code review and analysis platform.",
+    pricing: "Freemium",
+    votes: 892,
+    isNew: true,
+    isTrending: true,
+    addedDate: "2026-02-02"
   }
 ];
 
