@@ -94,7 +94,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Limited",
     website: "https://www.anthropic.com/claude",
-    logo: "https://www.anthropic.com/images/icons/apple-touch-icon.png"
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/crIfnNqNmxtYFOBP.PNG"
   },
   {
     name: "Runway",
@@ -206,7 +206,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Limited",
     reasoning: "Yes",
     website: "https://www.perplexity.ai",
-    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/JsbGXqdyqyiyjScR.PNG"
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/gAMHoVgxZMoPyNfl.PNG"
   },
   {
     name: "Midjourney",
@@ -218,7 +218,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.midjourney.com",
-    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/RhHXnZAdzGhyMZzw.PNG"
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/NAWOfgKiFvkiYRFc.PNG"
   },
   {
     name: "NotebookLM",
