@@ -166,7 +166,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Limited",
     website: "https://replit.com",
-    logo: "https://replit.com/public/images/logo-small.png"
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/LmOjyWikdDLoAluu.PNG"
   },
   {
     name: "Cursor",
