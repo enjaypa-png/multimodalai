@@ -94,7 +94,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Limited",
     website: "https://www.anthropic.com/claude",
-    logo: "https://logo.clearbit.com/anthropic.com"
+    logo: "https://www.anthropic.com/images/icons/apple-touch-icon.png"
   },
   {
     name: "Runway",
@@ -106,7 +106,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://runwayml.com",
-    logo: "https://logo.clearbit.com/runwayml.com"
+    logo: "https://runwayml.com/favicon.ico"
   },
   {
     name: "Luma Dream Machine",
@@ -118,7 +118,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://lumalabs.ai",
-    logo: "https://logo.clearbit.com/lumalabs.ai"
+    logo: "https://lumalabs.ai/favicon.ico"
   },
   {
     name: "Pika",
@@ -142,7 +142,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.synthesia.io",
-    logo: "https://logo.clearbit.com/synthesia.io"
+    logo: "https://www.synthesia.io/favicon.ico"
   },
   {
     name: "HeyGen",
@@ -206,7 +206,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Limited",
     reasoning: "Yes",
     website: "https://www.perplexity.ai",
-    logo: "https://logo.clearbit.com/perplexity.ai"
+    logo: "https://www.perplexity.ai/favicon.svg"
   },
   {
     name: "Midjourney",
@@ -218,7 +218,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.midjourney.com",
-    logo: "https://logo.clearbit.com/midjourney.com"
+    logo: "https://www.midjourney.com/apple-touch-icon.png"
   },
   {
     name: "NotebookLM",
@@ -254,7 +254,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.descript.com",
-    logo: "https://logo.clearbit.com/descript.com"
+    logo: "https://www.descript.com/favicon.ico"
   },
   {
     name: "ElevenLabs",
@@ -314,7 +314,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.d-id.com",
-    logo: "https://logo.clearbit.com/d-id.com"
+    logo: "https://www.d-id.com/favicon.ico"
   },
   {
     name: "Jasper AI",
@@ -326,7 +326,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Limited",
     website: "https://www.jasper.ai",
-    logo: "https://logo.clearbit.com/jasper.ai"
+    logo: "https://www.jasper.ai/hubfs/jasper-favicon-2023.png"
   },
   {
     name: "SportsAI",
@@ -338,7 +338,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Yes",
     website: "https://www.sports-ai.dev",
-    logo: "https://logo.clearbit.com/sports-ai.dev"
+    logo: "https://www.sports-ai.dev/favicon.ico"
   },
   {
     name: "GeniusIQ",
