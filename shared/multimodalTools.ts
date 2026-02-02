@@ -94,7 +94,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Limited",
     website: "https://www.anthropic.com/claude",
-    logo: "https://www.anthropic.com/_next/image?url=%2Fimages%2Ficons%2Fclaude-app-icon.png&w=96&q=75"
+    logo: "https://www.anthropic.com/images/icons/claude-app-icon.png"
   },
   {
     name: "Runway",
@@ -106,7 +106,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://runwayml.com",
-    logo: "https://cdn.runwayml.com/assets/favicon.png"
+    logo: "https://app.runwayml.com/favicon.ico"
   },
   {
     name: "Luma Dream Machine",
@@ -118,7 +118,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://lumalabs.ai",
-    logo: "https://lumalabs.ai/favicon.ico"
+    logo: "https://lumalabs.ai/apple-touch-icon.png"
   },
   {
     name: "Pika",
@@ -142,7 +142,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.synthesia.io",
-    logo: "https://www.synthesia.io/favicon.ico"
+    logo: "https://cdn.prod.website-files.com/63fdcbe48aa020c0a5493507/63fdcbe48aa020c0a54935c3_favicon.png"
   },
   {
     name: "HeyGen",
@@ -206,7 +206,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Limited",
     reasoning: "Yes",
     website: "https://www.perplexity.ai",
-    logo: "https://www.perplexity.ai/favicon.ico"
+    logo: "https://www.perplexity.ai/favicon.svg"
   },
   {
     name: "Midjourney",
@@ -218,7 +218,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.midjourney.com",
-    logo: "https://www.midjourney.com/favicon.ico"
+    logo: "https://cdn.midjourney.com/b89f5c4e-9d9d-4c3e-8e3e-3e3e3e3e3e3e/0_0.png"
   },
   {
     name: "NotebookLM",
@@ -254,7 +254,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.descript.com",
-    logo: "https://www.descript.com/favicon.ico"
+    logo: "https://www.descript.com/favicon-32x32.png"
   },
   {
     name: "ElevenLabs",
@@ -314,7 +314,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://www.d-id.com",
-    logo: "https://www.d-id.com/favicon.ico"
+    logo: "https://static.wixstatic.com/media/d1c7a4_8f0b3e3e3e3e3e3e3e3e3e3e3e3e3e3e~mv2.png"
   },
   {
     name: "Jasper AI",
@@ -326,7 +326,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Limited",
     website: "https://www.jasper.ai",
-    logo: "https://www.jasper.ai/favicon.ico"
+    logo: "https://www.jasper.ai/hubfs/jasper-favicon-2023.png"
   },
   {
     name: "SportsAI",
@@ -338,7 +338,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Yes",
     website: "https://www.sports-ai.dev",
-    logo: "https://www.sports-ai.dev/favicon.ico"
+    logo: "https://www.sports-ai.dev/logo.png"
   },
   {
     name: "GeniusIQ",
