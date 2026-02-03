@@ -30,6 +30,20 @@ export interface MultimodalTool {
   isNew?: boolean;
   isTrending?: boolean;
   addedDate?: string;
+  // Enhanced features
+  useCases?: string[];
+  pricingDetails?: {
+    free?: string;
+    paid?: string;
+    enterprise?: string;
+  };
+  keyFeatures?: string[];
+  pros?: string[];
+  cons?: string[];
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 /**
@@ -51,7 +65,51 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     description: "Google's flagship model blending text, code, images, audio, and video understanding. Build search tools, code assistants, or creative workflows—e.g., generate code from sketches or summarize videos with visuals. Native integration with Google Workspace boosts productivity. Freemium tiers available.",
     pricing: "Freemium",
     votes: 2156,
-    isTrending: true
+    isTrending: true,
+    useCases: [
+      "Generate code from UI sketches or wireframes",
+      "Analyze and summarize videos with visual context",
+      "Build multimodal search engines that understand images and text",
+      "Create content briefs by analyzing competitor websites and images",
+      "Automate document processing with charts, tables, and images"
+    ],
+    pricingDetails: {
+      free: "Free tier with rate limits via Google AI Studio",
+      paid: "Pay-per-use API starting at $0.00025/1K characters",
+      enterprise: "Custom pricing for Vertex AI with SLA and support"
+    },
+    keyFeatures: [
+      "Native multimodal understanding across text, images, audio, video, and code",
+      "1M+ token context window for long documents",
+      "Integrated with Google Workspace (Docs, Sheets, Gmail)",
+      "Function calling and structured output support",
+      "Available via API, Google AI Studio, and Vertex AI"
+    ],
+    pros: [
+      "Excellent multimodal capabilities",
+      "Large context window for complex tasks",
+      "Free tier available for testing",
+      "Strong integration with Google ecosystem"
+    ],
+    cons: [
+      "Rate limits on free tier can be restrictive",
+      "Video understanding still in limited preview",
+      "API pricing can add up for high-volume use"
+    ],
+    faqs: [
+      {
+        question: "Is Google Gemini free to use?",
+        answer: "Yes, Google Gemini offers a free tier through Google AI Studio with rate limits. For production use, you can access it via pay-per-use API pricing or enterprise plans through Vertex AI."
+      },
+      {
+        question: "What's the difference between Gemini and ChatGPT?",
+        answer: "Gemini is Google's multimodal AI model with native support for images, video, and audio, while ChatGPT focuses primarily on text and image understanding. Gemini also offers deeper integration with Google Workspace and a larger context window (1M+ tokens)."
+      },
+      {
+        question: "Can I use Gemini for commercial projects?",
+        answer: "Yes, Gemini can be used for commercial projects. You can access it via the paid API or enterprise plans through Vertex AI, which include commercial licensing and support."
+      }
+    ]
   },
   {
     name: "Claude",
@@ -65,7 +123,51 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     website: "https://www.anthropic.com/claude",
     logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/crIfnNqNmxtYFOBP.PNG",
     description: "Safe, helpful model handling text, code, images, and long-context reasoning. Craft emails from screenshots, debug code with diagrams, or brainstorm via voice notes. Enterprise-grade safety for business use. Paid plans via Anthropic API.",
-    pricing: "Paid"
+    pricing: "Paid",
+    useCases: [
+      "Draft emails from screenshots of meeting notes",
+      "Debug code with visual diffs and diagrams",
+      "Analyze financial reports with charts and tables",
+      "Create detailed content from voice note transcriptions",
+      "Process long documents (200K+ tokens) with context retention"
+    ],
+    pricingDetails: {
+      free: "Limited free tier via claude.ai",
+      paid: "Pro plan at $20/month or API at $3-15 per million tokens",
+      enterprise: "Custom enterprise pricing with dedicated support"
+    },
+    keyFeatures: [
+      "200K token context window for long documents",
+      "Constitutional AI for safe, helpful responses",
+      "Vision capabilities for image analysis",
+      "Strong reasoning and coding abilities",
+      "Enterprise-grade security and compliance"
+    ],
+    pros: [
+      "Excellent at following complex instructions",
+      "Strong safety and ethical guardrails",
+      "Large context window",
+      "High-quality code generation"
+    ],
+    cons: [
+      "More expensive than some competitors",
+      "Limited free tier",
+      "No native video or audio understanding"
+    ],
+    faqs: [
+      {
+        question: "Is Claude better than ChatGPT?",
+        answer: "Claude excels at following detailed instructions, handling long documents (200K tokens), and providing nuanced, thoughtful responses. ChatGPT may be better for general conversation and has more integrations. The best choice depends on your specific use case."
+      },
+      {
+        question: "Can Claude analyze images?",
+        answer: "Yes, Claude 3 and later versions support image analysis. You can upload images for tasks like OCR, chart interpretation, diagram analysis, and visual question answering."
+      },
+      {
+        question: "What's Claude's context window size?",
+        answer: "Claude 3 models support up to 200,000 tokens (roughly 150,000 words or 500 pages), making it ideal for analyzing long documents, codebases, or research papers."
+      }
+    ]
   },
   {
     name: "Runway",
@@ -227,7 +329,50 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     website: "https://www.perplexity.ai",
     logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/gAMHoVgxZMoPyNfl.PNG",
     description: "Search engine with vision for image uploads and real-time answers. Ask about charts, diagnose issues from photos, or research multimodally. Pro version cites sources deeply. Freemium core; Pro unlocks advanced models.",
-    pricing: "Freemium"
+    pricing: "Freemium",
+    useCases: [
+      "Research topics with real-time web search and citations",
+      "Analyze charts, graphs, and infographics from images",
+      "Diagnose technical issues by uploading error screenshots",
+      "Compare products with visual and text-based research",
+      "Get up-to-date information with source attribution"
+    ],
+    pricingDetails: {
+      free: "Free tier with limited searches per day",
+      paid: "Pro plan at $20/month with unlimited searches and advanced models"
+    },
+    keyFeatures: [
+      "Real-time web search with citations",
+      "Vision capabilities for image analysis",
+      "Multiple AI models (GPT-4, Claude, etc.) on Pro",
+      "Follow-up questions for deeper research",
+      "Mobile apps for iOS and Android"
+    ],
+    pros: [
+      "Excellent for research with source citations",
+      "Real-time information access",
+      "Clean, ad-free interface",
+      "Multiple AI models on Pro plan"
+    ],
+    cons: [
+      "Free tier has daily limits",
+      "Can be slower than pure LLMs",
+      "Sometimes provides outdated cached results"
+    ],
+    faqs: [
+      {
+        question: "Is Perplexity AI free?",
+        answer: "Yes, Perplexity offers a free tier with limited searches per day. The Pro plan ($20/month) provides unlimited searches, access to advanced AI models, and additional features."
+      },
+      {
+        question: "What makes Perplexity different from ChatGPT?",
+        answer: "Perplexity is designed specifically for research and search, providing real-time web results with citations. ChatGPT is a general-purpose conversational AI. Perplexity is better for fact-finding, while ChatGPT excels at creative tasks and general assistance."
+      },
+      {
+        question: "Does Perplexity cite its sources?",
+        answer: "Yes, Perplexity provides citations and links to sources for its answers, making it easy to verify information and dive deeper into topics."
+      }
+    ]
   },
   {
     name: "Midjourney",
@@ -241,7 +386,51 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     website: "https://www.midjourney.com",
     logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/NAWOfgKiFvkiYRFc.PNG",
     description: "Discord-based image generator turning prompts into stunning art. Style-transfer photos, upscale details, or remix community creations—artist's dream for concepts. V6+ handles complex scenes. Paid via bot subscriptions.",
-    pricing: "Paid"
+    pricing: "Paid",
+    useCases: [
+      "Create concept art and illustrations for creative projects",
+      "Generate marketing visuals and social media content",
+      "Design book covers, posters, and album artwork",
+      "Produce architectural visualizations and interior design concepts",
+      "Style-transfer photos into artistic renditions"
+    ],
+    pricingDetails: {
+      paid: "Basic plan at $10/month for ~200 images",
+      enterprise: "Pro plan at $60/month for unlimited relaxed generations"
+    },
+    keyFeatures: [
+      "Industry-leading image quality and artistic style",
+      "V6+ handles complex multi-subject scenes",
+      "Upscaling and variation tools",
+      "Community gallery for inspiration",
+      "Discord-based workflow with bot commands"
+    ],
+    pros: [
+      "Stunning artistic output",
+      "Strong community and resources",
+      "Regular model updates",
+      "Good at stylized and fantasy art"
+    ],
+    cons: [
+      "No free tier",
+      "Discord-only interface can be confusing",
+      "Less precise control than some competitors",
+      "All generations are public by default on basic plans"
+    ],
+    faqs: [
+      {
+        question: "Is Midjourney free?",
+        answer: "No, Midjourney requires a paid subscription starting at $10/month. There is no free tier, but you can try it with a trial if available."
+      },
+      {
+        question: "How do I use Midjourney?",
+        answer: "Midjourney operates through Discord. After subscribing, you join their Discord server and use bot commands like '/imagine' followed by your prompt to generate images."
+      },
+      {
+        question: "Can I use Midjourney images commercially?",
+        answer: "Yes, if you're on a paid plan, you own the rights to your generated images and can use them commercially. However, images created on the free trial (when available) have restrictions."
+      }
+    ]
   },
   {
     name: "NotebookLM",
