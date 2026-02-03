@@ -860,7 +860,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     description: "Text translation often embedded in multilingual multimodal flows.",
     pricing: "Paid"
   }
-];}
+];
 
 /**
  * Checks if a tool qualifies as multimodal (≥2 modalities with Yes or Limited support)
