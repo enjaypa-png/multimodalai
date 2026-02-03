@@ -5,9 +5,11 @@ import ToolCard from "./ToolCard";
 interface ToolGridProps {
   filter?: "trending" | "new" | "all";
   limit?: number;
+  excludeTrending?: boolean;
+  excludeFromOtherSections?: boolean;
 }
 
-export default function ToolGrid({ filter = "all", limit }: ToolGridProps) {
+export default function ToolGrid({ filter = "all", limit, excludeTrending = false, excludeFromOtherSections = false }: ToolGridProps) {
   const allTools = getMultimodalTools();
   
   const filteredTools = useMemo(() => {
@@ -18,6 +20,10 @@ export default function ToolGrid({ filter = "all", limit }: ToolGridProps) {
       tools = tools.filter(tool => tool.isTrending);
     } else if (filter === "new") {
       tools = tools.filter(tool => tool.isNew);
+      // Exclude tools that are also trending to avoid duplicates
+      if (excludeTrending) {
+        tools = tools.filter(tool => !tool.isTrending);
+      }
     }
     
     // Sort by votes (descending) if available
@@ -29,7 +35,7 @@ export default function ToolGrid({ filter = "all", limit }: ToolGridProps) {
     }
     
     return tools;
-  }, [allTools, filter, limit]);
+  }, [allTools, filter, limit, excludeTrending, excludeFromOtherSections]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

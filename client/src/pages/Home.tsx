@@ -107,7 +107,7 @@ export default function Home() {
               <h2 className="text-xl font-bold text-white">Trending Now</h2>
             </div>
           </div>
-          <ToolGrid filter="trending" limit={8} />
+          <ToolGrid filter="trending" limit={8} excludeFromOtherSections={true} />
         </section>
 
         {/* New Tools Section */}
@@ -118,7 +118,7 @@ export default function Home() {
               <h2 className="text-xl font-bold text-white">Recently Added</h2>
             </div>
           </div>
-          <ToolGrid filter="new" limit={8} />
+          <ToolGrid filter="new" limit={8} excludeTrending={true} />
         </section>
       </main>
 
