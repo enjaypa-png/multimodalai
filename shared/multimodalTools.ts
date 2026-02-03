@@ -36,22 +36,7 @@ export interface MultimodalTool {
  * Multimodal-qualified tools (≥2 modalities)
  */
 export const MULTIMODAL_TOOLS: MultimodalTool[] = [
-  {
-    name: "GPT-4o",
-    primaryCategory: "Multimodal AI Model",
-    text: "Yes",
-    image: "Yes",
-    video: "Limited",
-    audio: "Yes",
-    code: "Yes",
-    reasoning: "Yes",
-    website: "https://openai.com/index/gpt-4o",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
-    description: "Omnimodel capable of reasoning across audio, vision, and text.",
-    pricing: "Freemium",
-    votes: 2847,
-    isTrending: true
-  },
+
   {
     name: "Google Gemini",
     primaryCategory: "Multimodal AI Model",

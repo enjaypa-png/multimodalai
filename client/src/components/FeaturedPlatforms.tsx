@@ -4,7 +4,7 @@ import { getMultimodalTools, toKebabCase, getSupportedModalities } from "../../.
 // Get top multimodal tools for featured section, with Manus AI as the first featured tool
 const allTools = getMultimodalTools();
 const manusAI = allTools.find(tool => tool.name === "Manus AI");
-const otherTools = allTools.filter(tool => tool.name !== "Manus AI").slice(0, 3); // GPT-4o, ChatGPT, Google Gemini
+const otherTools = allTools.filter(tool => tool.name !== "Manus AI").slice(0, 3); // Top 3 tools
 const featuredTools = manusAI ? [manusAI, ...otherTools] : allTools.slice(0, 4);
 
 // For legacy compatibility, keeping old structure (not used anymore)
@@ -150,72 +150,7 @@ const oldFeaturedTools = [
       }
     ]
   },
-  {
-    name: "GPT-4o",
-    description: "Omnimodel capable of reasoning across audio, vision, and text.",
-    fullDescription: "GPT-4o (\"o\" for \"omni\") is OpenAI's flagship multimodal AI model, representing a significant leap toward natural human-computer interaction. Unlike previous models, GPT-4o is trained end-to-end across text, vision, and audio within a single neural network. This revolutionary architecture enables the model to reason across all modalities in real time, accepting any combination of inputs and generating text, audio, and image outputs. With response times matching human conversation, GPT-4o delivers GPT-4 Turbo-level performance while being 50% cheaper and significantly faster.",
-    rating: "4.9",
-    tags: ["Text", "Audio", "Image", "Video"],
-    icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
-    website: "https://openai.com/",
-    keyFeatures: [
-      {
-        name: "True Multimodal Processing",
-        description: "A single neural network processes text, audio, vision, and video inputs simultaneously."
-      },
-      {
-        name: "Real-Time Audio Interaction",
-        description: "Responds to audio inputs in as little as 232 milliseconds."
-      },
-      {
-        name: "Advanced Vision Understanding",
-        description: "Superior image and video comprehension compared to previous models."
-      },
-      {
-        name: "Multilingual Excellence",
-        description: "Significant improvements in non-English language processing."
-      },
-      {
-        name: "Emotional Intelligence",
-        description: "Detects and expresses tone, emotion, laughter, and singing in audio."
-      },
-      {
-        name: "Real-Time Translation",
-        description: "Provides instant translation across languages with audio and text."
-      }
-    ],
-    useCases: [
-      "Customer Service",
-      "Education & Tutoring",
-      "Accessibility",
-      "Content Creation",
-      "Coding & Development",
-      "Research & Analysis"
-    ],
-    pricing: [
-      {
-        name: "ChatGPT Free",
-        monthlyPrice: "$0",
-        features: ["Limited GPT-4o access", "Basic features"]
-      },
-      {
-        name: "ChatGPT Plus",
-        monthlyPrice: "$20",
-        features: ["Unlimited GPT-4o access", "Subject to usage caps", "Priority access"]
-      },
-      {
-        name: "ChatGPT Team",
-        monthlyPrice: "$25/user",
-        annualPrice: "Annual billing",
-        features: ["Team collaboration", "Admin controls", "Enhanced limits"]
-      },
-      {
-        name: "API Pricing",
-        monthlyPrice: "Pay-as-you-go",
-        features: ["Starting at $2.50 per 1M input tokens", "Flexible usage", "Volume discounts"]
-      }
-    ]
-  },
+
   {
     name: "Stable Diffusion 3",
     description: "Next-generation text-to-image model.",

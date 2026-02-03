@@ -29,7 +29,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
     <Link href={`/tool/${slug}`}>
       <div className="group relative bg-[#0A0A0B] border border-white/[0.08] rounded-lg p-4 hover:border-white/[0.2] hover:bg-white/[0.02] transition-all duration-200 cursor-pointer h-full flex flex-col">
         {/* Badges */}
-        <div className="absolute top-3 right-3 flex gap-1.5">
+        <div className="absolute top-3 right-3 flex gap-1.5 z-10">
           {tool.isTrending && (
             <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20">
               <TrendingUp className="w-3 h-3 text-orange-400" />
@@ -63,7 +63,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
             </div>
           )}
           
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 pr-24">
             <h3 className="text-base font-semibold text-white mb-1 group-hover:text-blue-400 transition-colors line-clamp-1">
               {tool.name}
             </h3>
