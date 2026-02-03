@@ -13,9 +13,6 @@ export default function ToolGrid({ filter = "all", limit }: ToolGridProps) {
   const filteredTools = useMemo(() => {
     let tools = [...allTools];
     
-    // Exclude ChatGPT from featured sections (keep it in search/directory only)
-    tools = tools.filter(tool => tool.name !== "ChatGPT");
-    
     // Apply filter
     if (filter === "trending") {
       tools = tools.filter(tool => tool.isTrending);
