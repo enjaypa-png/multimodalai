@@ -442,7 +442,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Yes",
     website: "https://notebooklm.google",
-    logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/UIQnAUHNpiOCOwDJ.png",
     description: "Google's research assistant turning notes/docs into podcasts or study guides. Upload PDFs/images for audio summaries, timelines, or Q&A—perfect for students/marketers. Free via Google; experimental features rolling out.",
     pricing: "Free"
   },
@@ -639,7 +639,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Limited",
     website: "https://imagebind.metademolab.com",
-    logo: "https://about.meta.com/favicon.ico",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/vyWxcmMYgXEOWCyk.webp",
     description: "Unified embedding for 6 modalities (text/audio/video/depth/thermal/IMU). Search/retrieve across senses—e.g., find videos by humming. Free research model.",
     pricing: "Free"
   },
@@ -653,7 +653,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Yes",
     website: "https://github.com/THUDM/CogVLM",
-    logo: "https://github.com/favicon.ico",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/ESroayxibnhANnrP.png",
     description: "Vision-language powerhouse for detailed image grounding/descriptions. OCR, charts, or scene analysis beats GPT-4V in benchmarks. Free/open weights.",
     pricing: "Free"
   },
@@ -724,7 +724,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "Yes",
     reasoning: "Limited",
     website: "https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html",
-    logo: "https://www.intel.com/favicon.ico",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/IMQIVenFzCKhOmOs.png",
     description: "Intel's edge optimizer for running multimodal models on devices. Compress/deploy vision/speech on laptops/CPUs. Free toolkit.",
     pricing: "Free"
   },
@@ -962,7 +962,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://huggingface.co/cerspense/zeroscope_v2_576w",
-    logo: "https://huggingface.co/favicon.ico",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/ekRzWCXzGemVmHah.png",
     description: "Specialized open models (video/audio/vision-language). Building blocks for custom multimodal stacks. Free.",
     pricing: "Free"
   },
@@ -976,7 +976,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "No",
     website: "https://audioldm.github.io",
-    logo: "https://github.com/favicon.ico",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/CnFtvCObnbgOCBPl.png",
     description: "Specialized open models (video/audio/vision-language). Building blocks for custom multimodal stacks. Free.",
     pricing: "Free"
   },
@@ -1004,7 +1004,7 @@ export const MULTIMODAL_TOOLS: MultimodalTool[] = [
     code: "No",
     reasoning: "Limited",
     website: "https://github.com/salesforce/BLIP",
-    logo: "https://github.com/favicon.ico",
+    logo: "https://files.manuscdn.com/user_upload_by_module/session_file/113166136/HufWYjalPjhbOwfo.jpg",
     description: "Specialized open models (video/audio/vision-language). Building blocks for custom multimodal stacks. Free.",
     pricing: "Free"
   },
