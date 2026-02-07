@@ -2,11 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/main.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb"
-      }
+      "src": "api/index.py",
+      "use": "@vercel/python"
     },
     {
       "src": "package.json",
@@ -19,14 +16,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/main.py"
+      "dest": "api/index.py"
     },
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "CACHE_TTL": "300"
-  }
+  ]
 }
